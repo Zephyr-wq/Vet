@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — Dr. Ikechukwu Igwe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="https://res.cloudinary.com/det5cjrev/image/upload/v1758194826/d352983b-dea0-4725-8b1a-b14b49a59c70_y4ny2f.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      color: #222;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.4s, color 0.4s;
+    }
+    header nav a {
+      margin: 0 15px;
+      font-weight: 600;
+      color: #444;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #2a9d8f;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      animation: fadeInDown 1.5s;
+    }
+    .section-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin: 12px auto 0;
+      background: #2a9d8f;
+    }
+    .service-card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    footer {
+      background: #2a9d8f;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      transition: background 0.4s, color 0.4s;
+    }
+    .long-section {
+      line-height: 1.7;
+      margin-bottom: 3rem;
+      animation: fadeInUp 1.5s;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------------- DARK MODE ---------------- */
+    body.dark-mode {
+      background: #121212;
+      color: #f1f1f1;
+    }
+    body.dark-mode header {
+      background: #1e1e1e;
+    }
+    body.dark-mode header nav a {
+      color: #ddd;
+    }
+    body.dark-mode header nav a:hover {
+      color: #2a9d8f;
+    }
+    body.dark-mode .bg-light {
+      background: #1a1a1a !important;
+    }
+    body.dark-mode .bg-white {
+      background: #1e1e1e !important;
+      color: #f1f1f1 !important;
+    }
+    body.dark-mode footer {
+      background: #111 !important;
+      color: #eee;
+    }
+
+    /* Toggler button */
+    .dark-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="py-3">
+    <nav class="container d-flex justify-content-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Veterinary Services</h1>
+    </div>
+  </section>
+
+  <!-- Preventive Care -->
+  <section class="container py-5 long-section">
+    <h2 class="section-title">Preventive Care</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="p-4 shadow rounded bg-white service-card">
+          <h5 class="fw-bold">Vaccinations</h5>
+          <p>Comprehensive vaccination schedules tailored to your pet’s species, age, and lifestyle to protect against preventable diseases.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-4 shadow rounded bg-white service-card">
+          <h5 class="fw-bold">Wellness Exams</h5>
+          <p>Annual and bi-annual check-ups that allow us to monitor your pet’s health, detect potential problems early, and provide peace of mind.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnostics -->
+  <section class="py-5 bg-light long-section">
+    <div class="container">
+      <h2 class="section-title">Diagnostics</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded service-card">
+            <h5 class="fw-bold">Laboratory Testing</h5>
+            <p>On-site bloodwork, urinalysis, and other lab tests for fast and accurate results.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded service-card">
+            <h5 class="fw-bold">Imaging</h5>
+            <p>Advanced digital X-rays and ultrasound services for precise internal diagnostics.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded service-card">
+            <h5 class="fw-bold">Specialist Referrals</h5>
+            <p>Collaborating with veterinary specialists when advanced diagnostics or treatments are required.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Surgery -->
+  <section class="container py-5 long-section">
+    <h2 class="section-title">Surgical Services</h2>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="p-4 shadow rounded bg-white service-card">
+          <h5 class="fw-bold">Spay & Neuter</h5>
+          <p>Safe and effective sterilization procedures that promote healthier lives and help control the pet population.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="p-4 shadow rounded bg-white service-card">
+          <h5 class="fw-bold">Soft Tissue Surgery</h5>
+          <p>From tumor removals to wound repairs, performed with precision and the utmost care for your pet’s comfort and recovery.</p>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="p-4 shadow rounded bg-white service-card">
+          <h5 class="fw-bold">Orthopedic Surgery</h5>
+          <p>Advanced procedures to repair fractures, ligament tears, and other musculoskeletal issues, restoring mobility and quality of life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dental Care -->
+  <section class="py-5 bg-light long-section">
+    <div class="container">
+      <h2 class="section-title">Dental Care</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="p-4 shadow rounded bg-white service-card">
+            <h5 class="fw-bold">Routine Cleaning</h5>
+            <p>Professional dental cleanings to prevent tartar buildup, gum disease, and other oral health issues.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="p-4 shadow rounded bg-white service-card">
+            <h5 class="fw-bold">Oral Surgery</h5>
+            <p>Tooth extractions and corrective procedures that relieve pain and improve long-term health.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Emergency Care -->
+  <section class="container py-5 long-section">
+    <h2 class="section-title">Emergency & Critical Care</h2>
+    <p>Accidents and sudden illnesses can be frightening, but our clinic is fully equipped to handle urgent cases. From trauma and poisoning to sudden respiratory or cardiac issues, we act quickly to stabilize your pet and provide lifesaving treatment when it matters most.</p>
+  </section>
+
+  <!-- Specialty Services -->
+  <section class="py-5 bg-light long-section">
+    <div class="container">
+      <h2 class="section-title">Specialty Services</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded service-card">
+            <h5 class="fw-bold">Dermatology</h5>
+            <p>Comprehensive skin care treatments for allergies, infections, and chronic conditions.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded service-card">
+            <h5 class="fw-bold">Nutrition Counseling</h5>
+            <p>Personalized dietary plans to help pets maintain optimal weight and overall health.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 bg-white shadow rounded service-card">
+            <h5 class="fw-bold">Behavioral Therapy</h5>
+            <p>Guidance and training strategies for pets with anxiety, aggression, or other behavioral challenges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wellness Programs -->
+  <section class="container py-5 long-section">
+    <h2 class="section-title">Wellness Programs</h2>
+    <p>We believe prevention is the best medicine. Our tailored wellness programs include routine check-ups, nutrition monitoring, vaccination updates, parasite control, and lifestyle guidance to ensure your pet thrives at every life stage.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Dr. Ikechukwu Igwe | Veterinary Medicine</p>
+  </footer>
+
+  <!-- Dark Mode Toggle Button -->
+  <button id="darkToggle" class="btn btn-secondary dark-toggle">🌙 Dark Mode</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    const body = document.body;
+
+    // Load preference
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Igwe Ikechukwu — Veterinary Medicine</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="https://res.cloudinary.com/det5cjrev/image/upload/v1758194826/d352983b-dea0-4725-8b1a-b14b49a59c70_y4ny2f.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      color: #222;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.4s, color 0.4s;
+    }
+    header nav a {
+      margin: 0 15px;
+      font-weight: 600;
+      color: #444;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #2a9d8f;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('https://images.unsplash.com/photo-1619983081634-81b5de7b08a6?auto=format&fit=crop&w=1600&q=80') 
+                  center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: bold;
+      animation: fadeInDown 1.5s;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 1rem;
+      animation: fadeInUp 2s;
+    }
+    .hero a {
+      margin-top: 2rem;
+      padding: 12px 28px;
+      background: #2a9d8f;
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .hero a:hover {
+      background: #21867a;
+    }
+    .section-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin: 12px auto 0;
+      background: #2a9d8f;
+    }
+    .services .card {
+      border: none;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .services .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .gallery img {
+      border-radius: 12px;
+      transition: transform 0.4s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background: #2a9d8f;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #f1f1f1;
+    }
+    body.dark-mode header {
+      background: #1f1f1f;
+    }
+    body.dark-mode header nav a {
+      color: #ddd;
+    }
+    body.dark-mode header nav a:hover {
+      color: #2a9d8f;
+    }
+    body.dark-mode footer {
+      background: #1f1f1f;
+    }
+    body.dark-mode .hero {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1619983081634-81b5de7b08a6?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    }
+    body.dark-mode .bg-light {
+      background: #1a1a1a !important;
+    }
+    body.dark-mode .bg-white {
+      background: #1e1e1e !important;
+      color: #f1f1f1;
+    }
+    body.dark-mode .card {
+      background: #1e1e1e;
+      color: #f1f1f1;
+    }
+    body.dark-mode .form-control {
+      background: #2a2a2a;
+      color: #f1f1f1;
+      border: 1px solid #444;
+    }
+    body.dark-mode .form-control:focus {
+      background: #2a2a2a;
+      color: #fff;
+      border-color: #2a9d8f;
+      box-shadow: none;
+    }
+    body.dark-mode .btn-success {
+      background: #2a9d8f;
+      border: none;
+    }
+    body.dark-mode .btn-success:hover {
+      background: #21867a;
+    }
+    body.dark-mode blockquote {
+      background: #1e1e1e !important;
+      color: #f1f1f1 !important;
+    }
+
+    /* Toggle Button */
+    .dark-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2000;
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="py-3">
+    <nav class="container d-flex justify-content-center text-info">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Caring for Pets, Healing with Heart</h1>
+      <p>Dr. Ikechukwu Reginald Igwe — Veterinary Medicine</p>
+      <a href="#services">Explore My Work</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="container py-5" id="about">
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 d-none d-md-block">
+        <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1758194642/download_1_c478tu.jpg" class="img-fluid rounded shadow w-100" style="object-fit: cover; height: 100%;" alt="Vet with dog">
+      </div>
+      <div class="col-md-6">
+        <p>With over a decade of experience in veterinary medicine, I specialize in both preventative care and advanced treatments for pets of all kinds. My mission is to ensure every animal receives compassionate, world-class care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-5 bg-light services" id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="row g-4 col-lg-12">
+        <div class="col-md-4 col-sm-12">
+          <div class="card shadow-sm">
+            <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1758194413/download_s4hqvt.jpg" class="card-img-top img-fluid" alt="Checkup">
+            <div class="card-body">
+              <h5>Preventative Care</h5>
+              <p>Routine check-ups, vaccinations, and early detection to keep pets healthy and thriving.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="card shadow-sm">
+            <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1758194793/download_2_mgikbd.jpg" height="193px" class="card-img-top" alt="Surgery">
+            <div class="card-body">
+              <h5>Surgery & Treatment</h5>
+              <p>Safe, professional surgical procedures with personalized recovery plans for each pet.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm">
+            <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1758195152/download_3_ikdisd.jpg" height="193px" class="card-img-top" alt="Pet nutrition">
+            <div class="card-body">
+              <h5>Nutrition & Wellness</h5>
+              <p>Tailored dietary and lifestyle advice to ensure pets live long, energetic lives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="container py-5 gallery d-none d-md-block" id="portfolio">
+    <h2 class="section-title">Gallery</h2>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <img src="https://res.cloudinary.com/det5cjrev/image/upload/v1758195240/download_4_hbm4sc.jpg" class="img-fluid shadow w-100" style="object-fit: cover; height: 100%;" alt="Veterinary Image">
+      </div>
+      <div class="col-md-4"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1758195241/download_5_jk6qhm.jpg" class="img-fluid shadow w-100"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80" class="img-fluid shadow w-100" style="object-fit: cover; height: 100%;"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-5 bg-light" id="contact">
+    <div class="container">
+      <h2 class="section-title text-dark">Get in Touch</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-dark">
+          <form class="p-4 bg-white shadow rounded">
+            <div class="mb-3">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-success px-4">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Dr. Ikechukwu Igwe | Veterinary Medicine</p>
+  </footer>
+
+  <!-- Dark Mode Toggle Button -->
+  <button id="darkToggle" class="btn btn-secondary dark-toggle">🌙 Dark Mode</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+      } else {
+        localStorage.setItem('theme', 'light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>

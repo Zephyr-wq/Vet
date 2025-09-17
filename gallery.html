@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gallery — Dr. Ikechukwu Igwe</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="https://res.cloudinary.com/det5cjrev/image/upload/v1758194826/d352983b-dea0-4725-8b1a-b14b49a59c70_y4ny2f.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fdfdfd;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      color: #222;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.3s;
+    }
+    header nav a {
+      margin: 0 15px;
+      font-weight: 600;
+      color: #444;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    header nav a:hover {
+      color: #2a9d8f;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556520930-085b7c4f0d2b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      transition: background 0.3s;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: bold;
+      animation: fadeInDown 1.5s;
+    }
+    .section-title {
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      margin: 12px auto 0;
+      background: #2a9d8f;
+    }
+    .gallery-img {
+      border-radius: 12px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      cursor: pointer;
+    }
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .category-section {
+      padding: 4rem 0;
+      transition: background 0.3s, color 0.3s;
+    }
+    footer {
+      background: #2a9d8f;
+      color: white;
+      text-align: center;
+      padding: 2rem 0;
+      margin-top: 3rem;
+      transition: background 0.3s;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------------- DARK MODE ---------------- */
+    body.dark-mode {
+      background: #121212;
+      color: #e4e4e4;
+    }
+    body.dark-mode header {
+      background: #1e1e1e;
+    }
+    body.dark-mode header nav a {
+      color: #ddd;
+    }
+    body.dark-mode header nav a:hover {
+      color: #2a9d8f;
+    }
+    body.dark-mode .category-section {
+      background: #1a1a1a !important;
+      color: #e4e4e4;
+    }
+    body.dark-mode .bg-light {
+      background: #222 !important;
+    }
+    body.dark-mode footer {
+      background: #1e1e1e;
+    }
+
+    /* Dark mode toggle button */
+    .dark-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 2000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="py-3">
+    <nav class="container d-flex justify-content-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Clinic Gallery</h1>
+    </div>
+  </section>
+
+  <!-- Gallery Categories -->
+  <section class="container category-section">
+    <h2 class="section-title">Pets in Care</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1624622615203-5d95df8333d3?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Dog checkup"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1601979031896-6fbb7b1fc8a0?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Cat on table"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1578575437130-527eed3abb64?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Vet with rabbit"></div>
+    </div>
+  </section>
+
+  <section class="container category-section bg-light">
+    <h2 class="section-title">Clinic & Facilities</h2>
+    <div class="row g-4">
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1588776814546-ec8d9b709584?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Clinic room"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1580281658629-5cbf79c34f6f?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Reception"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1618221195711-3ecae9a04c66?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Lab equipment"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1602002418242-4d9f30a97d3c?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Surgery room"></div>
+    </div>
+  </section>
+
+  <section class="container category-section">
+    <h2 class="section-title">Farm Animal Visits</h2>
+    <div class="row g-4">
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1559070121-1e0d9f99a5b9?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Vet with cow"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1620662736896-5ff1dd6ec8ab?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Goat checkup"></div>
+      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1621605818971-2b6ed29156c7?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Horse exam"></div>
+    </div>
+  </section>
+
+  <section class="container category-section bg-light">
+    <h2 class="section-title">Happy Patients</h2>
+    <div class="row g-4">
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Smiling dog"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Cat relaxing"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Puppy on grass"></div>
+      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Kitten on bed"></div>
+    </div>
+  </section>
+
+  <section class="container category-section">
+    <h2 class="section-title">Behind the Scenes</h2>
+    <div class="row g-4">
+      <div class="col-md-6"><img src="https://images.unsplash.com/photo-1580894740168-b89f911f046a?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Team discussion"></div>
+      <div class="col-md-6"><img src="https://images.unsplash.com/photo-1611171712054-20d4c13a6e25?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Vet at work"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Dr. Ikechukwu Igwe | Veterinary Medicine</p>
+  </footer>
+
+  <!-- Dark Mode Toggle -->
+  <button id="darkToggle" class="btn btn-secondary dark-toggle">🌙 Dark Mode</button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggleBtn = document.getElementById('darkToggle');
+    const body = document.body;
+
+    if(localStorage.getItem('theme') === 'dark'){
+      body.classList.add('dark-mode');
+      toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', ()=>{
+      body.classList.toggle('dark-mode');
+      if(body.classList.contains('dark-mode')){
+        localStorage.setItem('theme','dark');
+        toggleBtn.textContent = '☀️ Light Mode';
+      }else{
+        localStorage.setItem('theme','light');
+        toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>
