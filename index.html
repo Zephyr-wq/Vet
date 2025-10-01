@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dr. Igwe Ikechukwu — Veterinary Medicine</title>
+  <title>Friends Of Animals — Veterinary Medicine</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="icon" href="https://res.cloudinary.com/det5cjrev/image/upload/v1758194826/d352983b-dea0-4725-8b1a-b14b49a59c70_y4ny2f.png">
   <style>
@@ -293,7 +293,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Dr. Ikechukwu Igwe | Veterinary Medicine</p>
+    <p>&copy; 2025 Dr. Ikechukwu Igwe @ Friends Of Animals | Veterinary Medicine</p>
   </footer>
 
   <!-- Dark Mode Toggle Button -->
@@ -317,6 +317,30 @@
       } else {
         localStorage.setItem('theme', 'light');
         toggleBtn.textContent = '🌙 Dark Mode';
+      }
+    });
+  </script>
+
+  <script>
+    const form = document.getElementById('appointmentForm');
+
+    form.addEventListener("submit", async function(e) {
+      e.preventDefault(); // prevent default so we can handle it with JS
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          alert("✅ Appointment request submitted — we will contact you to confirm.");
+          form.reset();
+        } else {
+          alert("❌ Oops! Something went wrong — please try again.");
+        }
+      } catch (error) {
+        alert("⚠️ Network error — please check your connection and try again.");
       }
     });
   </script>
