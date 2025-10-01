@@ -24,19 +24,19 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       transition: background 0.3s;
     }
-    header nav a {
-      margin: 0 15px;
+    header .navbar-nav .nav-link {
+      margin: 0 10px;
       font-weight: 600;
       color: #444;
-      text-decoration: none;
       transition: color 0.3s;
     }
-    header nav a:hover {
+    header .navbar-nav .nav-link:hover {
       color: #2a9d8f;
     }
+
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556520930-085b7c4f0d2b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 60vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://res.cloudinary.com/det5cjrev/image/upload/v1759408965/download_gqc2ko.jpg') center/cover no-repeat;
+      height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -47,13 +47,14 @@
     .hero h1 {
       font-size: 2.8rem;
       font-weight: bold;
-      animation: fadeInDown 1.5s;
+      animation: fadeindown 3s;
     }
     .section-title {
       font-weight: 700;
       text-align: center;
       margin-bottom: 2rem;
       position: relative;
+      font-size: 1.8rem;
     }
     .section-title::after {
       content: "";
@@ -67,6 +68,9 @@
       border-radius: 12px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
       cursor: pointer;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
     }
     .gallery-img:hover {
       transform: scale(1.05);
@@ -84,7 +88,7 @@
       margin-top: 3rem;
       transition: background 0.3s;
     }
-    @keyframes fadeInDown {
+    @keyframes fadeindown {
       from { opacity: 0; transform: translateY(-40px); }
       to { opacity: 1; transform: translateY(0); }
     }
@@ -97,10 +101,10 @@
     body.dark-mode header {
       background: #1e1e1e;
     }
-    body.dark-mode header nav a {
+    body.dark-mode .navbar-nav .nav-link {
       color: #ddd;
     }
-    body.dark-mode header nav a:hover {
+    body.dark-mode .navbar-nav .nav-link:hover {
       color: #2a9d8f;
     }
     body.dark-mode .category-section {
@@ -121,71 +125,96 @@
       right: 20px;
       z-index: 2000;
     }
+
+    /* -------- RESPONSIVE FIXES -------- */
+    @media (max-width: 768px) {
+      .hero {
+        height: 40vh;
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .section-title {
+        font-size: 1.4rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="py-3">
-    <nav class="container d-flex justify-content-center">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+  <!-- Header with Responsive Navbar -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="index.html">Dr. Ikechukwu Igwe</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
   <!-- Hero -->
   <section class="hero">
-    <div>
-      <h1>Clinic Gallery</h1>
-    </div>
+    <h1>Gallery of Care & Compassion</h1>
   </section>
 
   <!-- Gallery Categories -->
   <section class="container category-section">
     <h2 class="section-title">Pets in Care</h2>
     <div class="row g-4">
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1624622615203-5d95df8333d3?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Dog checkup"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1601979031896-6fbb7b1fc8a0?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Cat on table"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1578575437130-527eed3abb64?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Vet with rabbit"></div>
+      <div class="col-md-4 col-sm-4 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406538/download_jmdy2c.jpg" class="img-fluid gallery-img" alt="Dog checkup"></div>
+      <div class="col-md-4 col-sm-4 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406538/download_1_wfx4fn.jpg" class="img-fluid gallery-img" alt="Cat on table"></div>
+      <div class="col-md-4 col-sm-4 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406538/download_2_nqsksg.jpg" class="img-fluid gallery-img" alt="Vet with rabbit"></div>
     </div>
   </section>
 
   <section class="container category-section bg-light">
     <h2 class="section-title">Clinic & Facilities</h2>
     <div class="row g-4">
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1588776814546-ec8d9b709584?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Clinic room"></div>
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1580281658629-5cbf79c34f6f?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Reception"></div>
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1618221195711-3ecae9a04c66?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Lab equipment"></div>
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1602002418242-4d9f30a97d3c?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Surgery room"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406748/download_3_ool0he.jpg" class="img-fluid gallery-img" alt="Clinic room"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406932/download_7_mbmpva.jpg" class="img-fluid gallery-img" alt="Reception"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406750/download_5_h0amuw.jpg" class="img-fluid gallery-img" alt="Lab equipment"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759406750/download_6_owe37c.jpg" class="img-fluid gallery-img" alt="Surgery room"></div>
     </div>
   </section>
 
   <section class="container category-section">
     <h2 class="section-title">Farm Animal Visits</h2>
     <div class="row g-4">
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1559070121-1e0d9f99a5b9?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Vet with cow"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1620662736896-5ff1dd6ec8ab?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Goat checkup"></div>
-      <div class="col-md-4"><img src="https://images.unsplash.com/photo-1621605818971-2b6ed29156c7?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Horse exam"></div>
+      <div class="col-md-4 col-sm-4 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407090/download_8_abelps.jpg" class="img-fluid gallery-img" alt="Vet with cow"></div>
+      <div class="col-md-4 col-sm-4 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407091/download_9_liisfc.jpg" class="img-fluid gallery-img" alt="Goat checkup"></div>
+      <div class="col-md-4 col-sm-4 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407091/download_10_nfeyvn.jpg" class="img-fluid gallery-img" alt="Horse exam"></div>
     </div>
   </section>
 
   <section class="container category-section bg-light">
     <h2 class="section-title">Happy Patients</h2>
     <div class="row g-4">
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Smiling dog"></div>
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Cat relaxing"></div>
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Puppy on grass"></div>
-      <div class="col-md-3"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Kitten on bed"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407381/download_14_bjwfjn.jpg" class="img-fluid gallery-img" alt="Smiling dog"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407381/download_12_p5vr5e.jpg" class="img-fluid gallery-img" alt="Cat relaxing"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407380/download_11_low0xc.jpg" class="img-fluid gallery-img" alt="Puppy on grass"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407382/download_13_sinpdt.jpg" class="img-fluid gallery-img" alt="Kitten on bed"></div>
     </div>
   </section>
 
   <section class="container category-section">
     <h2 class="section-title">Behind the Scenes</h2>
     <div class="row g-4">
-      <div class="col-md-6"><img src="https://images.unsplash.com/photo-1580894740168-b89f911f046a?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Team discussion"></div>
-      <div class="col-md-6"><img src="https://images.unsplash.com/photo-1611171712054-20d4c13a6e25?auto=format&fit=crop&w=800&q=80" class="img-fluid gallery-img" alt="Vet at work"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407573/download_16_mwbdls.jpg" class="img-fluid gallery-img" alt="Team discussion"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407573/download_15_amne8u.jpg" class="img-fluid gallery-img" alt="Vet at work"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407769/images_esu6ib.jpg" class="img-fluid gallery-img" alt="Vet at work"></div>
+      <div class="col-md-3 col-sm-6 col-12"><img src="https://res.cloudinary.com/det5cjrev/image/upload/v1759407770/download_17_zb2bz8.jpg" class="img-fluid gallery-img" alt="Vet at work"></div>
     </div>
   </section>
 
